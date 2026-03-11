@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+
+// Internal imports must be strictly after dotenv
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorMiddleware');
 const patientRoutes = require('./routes/patientRoutes');
