@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorMiddleware');
 const patientRoutes = require('./routes/patientRoutes');
@@ -8,6 +9,9 @@ const patientRoutes = require('./routes/patientRoutes');
 connectDB();
 
 const app = express();
+
+// Enable CORS
+app.use(cors());
 
 // Body parser
 app.use(express.json());
